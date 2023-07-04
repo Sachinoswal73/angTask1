@@ -1,0 +1,41 @@
+.pg:hover{
+    transform: scale(1.05);
+}
+
+.containerBtn{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    text-align: center;
+}
+
+button.dibtn {
+    // width: 100px;
+    height: 28px;
+    font-size: 16px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // background-color: green;
+    border: 1px solid grey;
+    color: black;
+}
+
+button.dibtn:hover {
+    background-color: greenyellow;
+    color: grey;
+}
+
+.ipVal{
+    // width: 50px;
+    // text-align: center;
+}
+
+/*apply css properties to h2 tag*/
+ 
+h2 {
+    color: black;
+    margin: 0 50px;
+    font-size: 45px;
+}

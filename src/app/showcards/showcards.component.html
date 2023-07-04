@@ -1,0 +1,86 @@
+<p>Products Grid</p>
+
+<div class="row">
+    
+    <div class="col-3 mb-4 pg" 
+        *ngFor="let pa of productsArray; let i = index;">
+        <div class="card text-center">
+            <img class="card-img-top" [src]="pa.pim"
+              alt="Card image cap"
+              style="width: 150px;margin:auto"
+              class="p-2">
+            <div class="card-body">
+              <h5 class="card-title">{{ pa.pnm }}</h5>
+              <p class="card-text" 
+                >
+                {{ pa.ppr * qtyArr[i] | currency : "INR":"symbol" }} /-
+               </p>
+               <!-- <p> 
+                    <ng-template #qty1Plus> 
+                        {{ pa.ppr * qtyArr[i] | currency : "INR":"symbol" }} /-
+                    </ng-template> 
+                </p> -->
+
+              <div class="containerBtn mb-2">
+                <button (click)="decrement(i)" class="dibtn pt-0"> - </button> 
+                <!-- {{ qty[i] = 0 }} -->
+                <input type="text" 
+                    name="" 
+                    id=""
+                    [value]="qtyArr[i]"
+                    class="ipVal text-center w-50 mx-1">
+                <button (click)="increment(i)" class="dibtn pt-0">+</button>
+               
+              </div>  
+              
+              <button 
+                class="btn btn-light border border-primary"
+                (click)="addToTable(pa,qtyArr[i], pa.ppr * qtyArr[i])"
+              >
+                Add to Bag
+            </button>
+            </div>
+          </div>
+    </div>
+    
+</div>
+
+<hr>
+<br>
+
+<div class="row">
+
+    <div class="col-12">
+        <table class="table table table-bordered">
+            <thead>
+                <tr>
+                    <td>Product Name</td>
+                    <td>Quantity</td>
+                    <td>Price Details</td>
+                    <td>Order Total</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prad of productsAdded;">
+                    <td> {{ prad.pnm }} </td>
+                    <td> {{ prad.qty }} </td>
+                    <td> {{ prad.ppr }}</td>
+                    <td> {{ prad.ttl }}</td>
+                    <td> -- </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right">Total</td>
+                    <td>{{ fttl }}</td>
+                    <td>--</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+    
+
+  
