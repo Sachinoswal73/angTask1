@@ -31,7 +31,7 @@ export class HttpHandlerService {
         return this.httpCl.get(this.main_api_url)
             .pipe( map( ( rwData : any ) => {
                 let convArray = [];
-                // console.log(rwData);
+                console.log(rwData);
                 for(let rwd in rwData){
                     convArray.push({...rwData[rwd], id : rwd })
                 }
